@@ -1,7 +1,9 @@
 import "./Column.css"
+import Task from "./Task"
 
 export default function Column({ state }) {
 return <div className="column">
-    {state}
+    <p>{state}</p>
+    <Task title="To Do" />
 </div>
 }
