@@ -13,3 +13,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+.status {
+    font-size: small;
+    background: var(--COLOR-GRAY-LIGHT);
+    padding: 0.25rem;
+    border-radius: 4px;
+}
