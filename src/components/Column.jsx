@@ -15,7 +15,10 @@ const tasks = useStore((store)=>
 const addTask = useStore(store=>store.addTask)
 
 return 
-<div className="column">
+<div className="column" onDragOver={e=>{e.preventDefault()}}
+    onDrop={e=>{
+        console.log("drop"); 'drop'
+    }}>
     <div className="titleWrapper">
     <p>{state}</p>
     <button 
