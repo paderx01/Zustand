@@ -5,7 +5,8 @@ import {useState} from 'react';
 
 export default function Column({ state }) {
 const [text, setText] = useState('');
-const [open, setOpen] = useState(false)   
+const [open, setOpen] = useState(false);
+const [drop, setDrop] = useState(false);
     
 const tasks = useStore((store)=> 
     store.tasks.filter((task)=>task.state === state)
@@ -18,8 +19,15 @@ const moveTask = useStore((store)=>store.moveTask);
 
 
 return 
-<div className="column" onDragOver={e=>{e.preventDefault()}}
+<div className={classNames("column", {drop: drop})} 
+    onDragOver={e=>{
+        setDrop(true);
+        e.preventDefault()}}
+    onDragLeave={e=>{
+        setDrop(false);
+        e.preventDefault()}}  
     onDrop={e=>{
+        setDrop(false);
         setDraggedTask(null)
         moveTask(draggedTask, state)
     }}>
