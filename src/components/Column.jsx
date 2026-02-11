@@ -56,3 +56,14 @@ return
         )};
 </div>    
 }
+
+function RefTest() {
+    const ref = useRef();
+
+    useEffect(() => {
+        useStore.subscribe()
+    }, []);
+
+
+    return ref.current;
+}
