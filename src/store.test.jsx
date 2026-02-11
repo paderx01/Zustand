@@ -44,4 +44,4 @@ test('should add an items to the store and rerun the effect', ()=>{
     render(<TestComponent selector={selector} effect={effect}/>);
     expect(effect).toHaveBeenCalledTimes(2);
     expect(currentItems.tasks).toEqual([])
-});
+}); 

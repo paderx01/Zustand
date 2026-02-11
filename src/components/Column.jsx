@@ -61,7 +61,7 @@ function RefTest() {
     const ref = useRef();
 
     useEffect(() => {
-        useStore.subscribe()
+        useStore.subscribe(store =>store.tasks, (tasks) => {ref.current = tasks})
     }, []);
 
 
